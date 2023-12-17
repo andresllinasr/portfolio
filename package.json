@@ -1,7 +1,6 @@
 {
-  "name": "react-boilerplate",
+  "name": "andresllinasr-portfolio",
   "version": "1.0.0",
-  "description": "Software of Development with NodeJS,Babel,Webpack,React,etc",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server -d --open",
