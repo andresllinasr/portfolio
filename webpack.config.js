@@ -5,7 +5,6 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const devMode = process.env.NODE_ENV !== 'production'
 
 module.exports = {
-  mode: 'production',
   entry: "./src/index.js",
   output: {
     path: path.join(__dirname, "dist"),
@@ -51,6 +50,11 @@ module.exports = {
   devServer: {
     compress:true,
     port: 9000
+  },
+  performance: {
+    hints: false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000
   },
   devtool: 'eval-cheap-module-source-map'
 };
