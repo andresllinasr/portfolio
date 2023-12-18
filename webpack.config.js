@@ -7,6 +7,7 @@ const devMode = process.env.NODE_ENV !== 'production'
 module.exports = {
   mode: 'production',
   entry: "./src/index.js",
+  devtool: 'eval-cheap-source-map',
   output: {
     path: path.join(__dirname, "/"),
     filename: "bundle.js",
@@ -49,7 +50,6 @@ module.exports = {
     }),
   ],
   devServer: {
-    contentBase: path.join(__dirname,'dist'),
     compress:true,
     port: 9000
   }
