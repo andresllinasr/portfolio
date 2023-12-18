@@ -7,9 +7,8 @@ const devMode = process.env.NODE_ENV !== 'production'
 module.exports = {
   mode: 'production',
   entry: "./src/index.js",
-  devtool: 'eval-cheap-source-map',
   output: {
-    path: path.join(__dirname, "/"),
+    path: path.join(__dirname, "dist"),
     filename: "bundle.js",
   },
   module: {
@@ -45,12 +44,13 @@ module.exports = {
       filename: "index.html",
     }),
     new MiniCssExtractPlugin({
-      filename: devMode ? '[name].css' : '[name].[hash].css',
-      chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
+      filename: devMode ? '[name].css' : '[name].[contenthash].css',
+      chunkFilename: devMode ? '[id].css' : '[id].[contenthash].css',
     }),
   ],
   devServer: {
     compress:true,
     port: 9000
-  }
+  },
+  devtool: 'eval-cheap-module-source-map'
 };
