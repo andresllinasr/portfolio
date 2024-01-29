@@ -1,5 +1,16 @@
 @import url(https://fonts.googleapis.com/css?family=PT+Mono|Fira+Sans:100,300,400,600,700);
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+
 body {
     font-family: 'fira Sans', sans-serif;
     margin: 0;
