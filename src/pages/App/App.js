@@ -1,10 +1,12 @@
 import React from 'react'
 import designer from '../../assets/designer.svg'
+import Navbar from '../../Components/Navbar/navbar'
 
 export const App = () => {
     return (
         <div className="container">
             <section>
+                <Navbar />
                 <div className="homepage-wrapper">
                     <h1>WIP: Mixing Colors, Lines, and Pixels</h1>
                     <div className="img-wrapper">

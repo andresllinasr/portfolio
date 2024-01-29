@@ -1,0 +1,194 @@
+// Important:  it's necessary to apply position: relative to the parent element of the pseudo-selector in order for the pseudo-selector to work properly.
+%pseudo-selector-overlay {
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+    }
+
+    &:focus-visible {
+        &::after {
+            outline: 2px solid #A55CE4;
+            border-radius: 3px;
+        }
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+.navbar__wrapper {
+    width: 100%;
+
+    &--open {
+        .navbar__overlay {
+            visibility: visible;
+            opacity: .8;
+            transition: opacity 0.3s ease-in-out;
+
+            @media screen and (min-width: 800px) {
+                visibility: hidden;
+            }
+        }
+
+        .navbar__list {
+            transform: translateX(0);
+            visibility: visible;
+        }
+    }
+}
+
+.navbar__overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0s 0.3s;
+}
+
+.navbar__visible {
+    position: relative;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    height: 3.75rem;
+    padding: 0 1rem;
+    z-index: 1;
+}
+
+.navbar__content {
+    width: 100%;
+    max-width: 1080px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar__list {
+    position: absolute;
+    top: 3.75rem;
+    left: 0;
+    display: flex;
+    width: calc(100% - 56px);
+    background-color: black;
+    flex-direction: column;
+    justify-content: center;
+    transform: translateX(-100%);
+    visibility: hidden;
+    transition: transform 0.3s ease-in-out, visibility 0.3s ease-in-out;
+
+    @media screen and (min-width: 800px) {
+        transition: none;
+        position: static;
+        transform: translateX(0);
+        visibility: visible;
+        padding: 0;
+        background: none;
+        flex-direction: row;
+        justify-content: space-evenly;
+        max-width: 70%;
+    }
+}
+
+.navbar__logo {
+    padding: 0.5rem;
+    position: relative;
+    font-weight: bold;
+    font-size: 1rem;
+    font-family: 'Poppins', 'Fira Sans', sans-serif;
+    min-width: fit-content;
+
+    &::after {
+        content: '_';
+        color: #A55CE4;
+    }
+}
+
+.navbar__item {
+    padding: 1rem;
+    border-top: 1px solid #333;
+    position: relative;
+
+    &::before {
+        content: "//";
+        color: #ccc;
+        margin-right: 0.5rem;
+    }
+
+    @media screen and (min-width: 800px) {
+        margin-right: 2rem;
+        border: none;
+        padding: 0.5rem;
+    }
+}
+
+.navbar__link {
+    @extend %pseudo-selector-overlay;
+    text-decoration: none;
+    color: white;
+
+    &:focus-visible {
+        outline: none;
+    }
+
+    &:hover {
+        color: #A55CE4;
+    }
+
+    &:active {
+        color: #7e46af;
+    }
+}
+
+.navbar__link:not(.navbar__logo) {
+    &::after {
+        outline-offset: -2px;
+    }
+
+    @media screen and (min-width: 800px) {
+        &::after {
+            outline-offset: 0;
+        }
+    }
+}
+
+.navbar__btn {
+    border: none;
+    background: none;
+    font-size: 1.85rem;
+    line-height: 1;
+    color: white;
+    padding: 0.5rem;
+    transition: color 0.1s ease-in-out;
+
+    &:hover {
+        color: #bbb;
+    }
+
+    &:active {
+        color: #A55CE4;
+        animation: spin 1s linear infinite;
+    }
+
+    &:focus-visible {
+        outline: 2px solid #A55CE4;
+        border-radius: 3px;
+    }
+
+    @media screen and (min-width: 800px) {
+        display: none;
+    }
+}
