@@ -11,8 +11,8 @@ const Hero = () => {
           <h1 className='hero-title'>Hi, My name is<br /><span className="highlighted-text">Andrés Llinás</span></h1>
           <p className="hero-header">I develop exceptional and accessible digital experiences for the web.</p>
           <div className="hero-ctas cta-group">
-            <a className='hero-cta primary-cta' href="#">Download CV</a>
-            <a className='hero-cta secondary-cta' href="#">Get in touch</a>
+            <a className='hero-cta primary-cta' href="https://drive.google.com/file/d/1qLzD8NCCJjuS7XCxQMO-MCEmqqM4Z35l/view?usp=sharing" target="_blank" rel="noopener noreferrer">Download CV</a>
+            <a className='hero-cta secondary-cta' href="https://www.linkedin.com/in/andresllinasr/" target="_blank" rel="noopener noreferrer">Get in touch</a>
           </div>
         </div>
         <div className="hero-right">
