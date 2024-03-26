@@ -56,6 +56,16 @@
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease-in-out, visibility 0s 0.3s;
+    background-color:#ffb499;
+    background-image:
+    radial-gradient(at 41% 86%, hsla(288,86%,79%,1) 0px, transparent 50%),
+    radial-gradient(at 86% 19%, hsla(260,88%,64%,1) 0px, transparent 50%),
+    radial-gradient(at 15% 55%, hsla(82,75%,76%,1) 0px, transparent 50%),
+    radial-gradient(at 60% 1%, hsla(109,65%,74%,1) 0px, transparent 50%),
+    radial-gradient(at 78% 35%, hsla(243,83%,66%,1) 0px, transparent 50%),
+    radial-gradient(at 70% 98%, hsla(304,76%,65%,1) 0px, transparent 50%),
+    radial-gradient(at 85% 93%, hsla(167,94%,70%,1) 0px, transparent 50%);
+    filter: brightness(70%) blur(30%);
 }
 
 .navbar__visible {
