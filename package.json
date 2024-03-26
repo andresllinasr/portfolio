@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack serve --open --mode development",
+    "dev": "webpack serve --watch --open --mode development",
     "build": "webpack --mode production",
     "predeploy": "npm run build",
     "deploy": "npm run build && echo andresllinasr.com > ./dist/CNAME && gh-pages -d dist"
