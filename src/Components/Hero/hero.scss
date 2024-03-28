@@ -18,13 +18,13 @@
 
 .hero-content {
   width: 100%;
-  gap: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1rem;
   margin-top: 48px;
+  padding: 0 1rem;
 
   @media ($tablet-portrait) {
     padding: 0 2rem;
@@ -55,7 +55,6 @@
 
 .hero-title {
   font-size: 3rem;
-  white-space: nowrap;
   font-family: "Changa One", sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -66,7 +65,11 @@
 }
 
 .hero-header {
-  font-size: 1.2rem;
+  font-size: 1rem;
+
+  @media ($tablet-portrait) {
+    font-size: 1.2rem;
+  }
 }
 
 .hero-title .highlighted-text {
@@ -76,7 +79,7 @@
 .cta-group {
   margin-top: 1rem;
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   align-items: center;
 }
 
@@ -98,8 +101,8 @@
   position: relative;
   display: flex;
   justify-content: center;
-  width: 80%;
-  max-width: 700px;
+  width: 100%;
+  max-width: 500px;
 
   @media ($tablet-portrait) {
     width: 100%;
