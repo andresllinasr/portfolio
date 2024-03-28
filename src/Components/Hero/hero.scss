@@ -10,24 +10,25 @@
   justify-content: space-between;
   min-height: calc(var(--hero-height) - $nav-height);
   overflow: hidden;
+  padding: 0 1rem;
 
-  @media ($tablet-portrait) {
+  @media ($tablet-portrait-breakpoint) {
     min-height: calc(var(--hero-height) - $nav-height);
+    padding: 0 2rem;
   }
 }
 
 .hero-content {
   width: 100%;
+  max-width: $desktop-size;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1rem;
   margin-top: 48px;
-  padding: 0 1rem;
 
-  @media ($tablet-portrait) {
-    padding: 0 2rem;
+  @media ($tablet-portrait-breakpoint) {
     flex-direction: row;
     margin-top: 100px;
     gap: 2rem;
@@ -39,14 +40,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  width: 100%;
   max-width: 500px;
   gap: 0.5rem;
   font-size: 1rem;
   font-weight: 400;
   text-align: center;
 
-  @media ($tablet-portrait) {
+  @media ($tablet-portrait-breakpoint) {
     align-items: flex-start;
     text-align: start;
     gap: 1.5rem;
@@ -59,7 +60,7 @@
   font-weight: 400;
   font-style: normal;
 
-  @media ($tablet-portrait) {
+  @media ($tablet-portrait-breakpoint) {
     font-size: 4rem;
   }
 }
@@ -67,7 +68,7 @@
 .hero-header {
   font-size: 1rem;
 
-  @media ($tablet-portrait) {
+  @media ($tablet-portrait-breakpoint) {
     font-size: 1.2rem;
   }
 }
@@ -104,7 +105,7 @@
   width: 100%;
   max-width: 500px;
 
-  @media ($tablet-portrait) {
+  @media ($tablet-portrait-breakpoint) {
     width: 100%;
     max-width: 600px;
   }
@@ -141,7 +142,7 @@
   animation-delay: 5s;
   pointer-events: none;
 
-  @media ($tablet-portrait) {
+  @media ($tablet-portrait-breakpoint) {
     height: 2.5rem;
     width: 2.5rem;
     margin-bottom: 3rem;
