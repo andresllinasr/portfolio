@@ -1,6 +1,6 @@
 import React from 'react';
 import './hero.scss';
-import avatar from '../../assets/avatar.svg'
+import avatar from '../../assets/avatar.png'
 import swipeIcon from '../../assets/swipe-icon.svg'
 
 const Hero = () => {
