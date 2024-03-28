@@ -1,14 +1,19 @@
 @import '../../assets/silentStyles.scss';
+@import '../../assets/global_variables.scss';
 
 .hero-wrapper {
-  background-color: #0E141B;
-  color: #F1F1F1;
+  background-color: $black-2;
+  color: $white-1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: calc(100vh - 60px);
+  min-height: calc(var(--hero-height) - $nav-height);
   overflow: hidden;
+
+  @media ($tablet-portrait) {
+    min-height: calc(var(--hero-height) - $nav-height);
+  }
 }
 
 .hero-content {
@@ -18,13 +23,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
-  margin-top: 60px;
+  gap: 1rem;
+  margin-top: 48px;
 
-  @media screen and (min-width: 900px) {
+  @media ($tablet-portrait) {
     padding: 0 2rem;
     flex-direction: row;
     margin-top: 100px;
+    gap: 2rem;
   }
 }
 
@@ -40,7 +46,7 @@
   font-weight: 400;
   text-align: center;
 
-  @media screen and (min-width: 800px) {
+  @media ($tablet-portrait) {
     align-items: flex-start;
     text-align: start;
     gap: 1.5rem;
@@ -54,7 +60,7 @@
   font-weight: 400;
   font-style: normal;
 
-  @media screen and (min-width: 800px) {
+  @media ($tablet-portrait) {
     font-size: 4rem;
   }
 }
@@ -64,7 +70,7 @@
 }
 
 .hero-title .highlighted-text {
-  color: #9656CE;
+  color: $primary;
 }
 
 .cta-group {
@@ -77,25 +83,25 @@
 .primary-cta {
   @extend %cta;
   border: none;
-  color: #F1F1F1;
-  background-color: #9656CE;
+  color: $white-1;
+  background-color: $primary;
 }
 
 .secondary-cta {
   @extend %cta;
   border-radius: 5px;
-  color: #F1F1F1;
-  border: 1px solid #F1F1F1;
+  color: $white-1;
+  border: 1px solid $white-1;
 }
 
 .hero-right {
   position: relative;
   display: flex;
   justify-content: center;
-  width: 90%;
+  width: 80%;
   max-width: 700px;
 
-  @media screen and (min-width: 800px) {
+  @media ($tablet-portrait) {
     width: 100%;
     max-width: 600px;
   }
@@ -120,65 +126,22 @@
   border-radius: 30%;
 }
 
-@keyframes float {
-  0% {
-    transform: translatey(0px);
-  }
-
-  20% {
-    transform: translatey(-40px);
-    transform: rotate(5deg);
-  }
-
-  80% {
-    transform: translatey(40px);
-    transform: rotate(-5deg);
-  }
-
-  100% {
-    transform: translatey(0px);
-    transform: rotate(0deg);
-  }
-}
-
 .swipe-icon {
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 2rem;
+  width: 2rem;
   opacity: .3;
   margin-top: auto;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   -moz-animation: shakeme 3s infinite;
   -o-animation: shakeme 3s infinite;
   -webkit-animation: shakeme 3s infinite;
   animation: shakeme 10s infinite;
   animation-delay: 5s;
   pointer-events: none;
-}
 
-@keyframes shakeme {
-
-  2%,
-  18% {
-    transform: translateY(-3px);
-  }
-
-  4%,
-  16% {
-    transform: translateY(3px);
-  }
-
-  6%,
-  10%,
-  14% {
-    transform: translateY(-3px);
-  }
-
-  8%,
-  12% {
-    transform: translateY(3px);
-  }
-
-  20% {
-    transform: translateY(0);
+  @media ($tablet-portrait) {
+    height: 2.5rem;
+    width: 2.5rem;
+    margin-bottom: 3rem;
   }
 }

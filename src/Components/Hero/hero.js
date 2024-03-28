@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './hero.scss';
 import avatar from '../../assets/avatar.png'
 import swipeIcon from '../../assets/swipe-icon.svg'
 
 const Hero = () => {
+
+  useEffect(() => {
+    const windowHeight = window.innerHeight;
+    const heroWrapper = document.querySelector('.hero-wrapper');
+    if (heroWrapper) {
+      heroWrapper.style.setProperty('--hero-height', `${windowHeight}px`);
+    }
+  }, []);
+
   return (
     <section className="hero-wrapper">
       <div className="hero-content">
