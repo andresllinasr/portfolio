@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import './hero.scss';
-import avatar from '../../assets/avatar.png'
+import avatar from '../../assets/avatar.webp'
 import swipeIcon from '../../assets/swipe-icon.svg'
 
 const Hero = () => {

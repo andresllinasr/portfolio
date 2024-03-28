@@ -19,10 +19,6 @@ module.exports = {
         use: ["babel-loader"],
       },
       {
-        test: /\.svg$/,
-        use: ['file-loader']
-      },
-      {
         test: /\.s[ca]ss$/i,
         use: [
           {
@@ -37,7 +33,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jpe?g|gif)$/i,
+        test: /\.(svg|webp|png|jpe?g|gif)$/i,
         use: [
           {
             loader: 'file-loader',
