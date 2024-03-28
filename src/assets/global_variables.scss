@@ -1,0 +1,89 @@
+$nav-height: 60px;
+
+// Colors
+$primary: #9656CE;
+$black-1: #333;
+$black-2: #0E141B;
+$white-1: #F1F1F1;
+
+// Breakpoints
+$tablet-portrait: "width > 800px";
+$desktop: "width > 1024px";
+
+// Mixins
+
+// Important:  it's necessary to apply position: relative to the parent element of the pseudo-selector in order for the pseudo-selector to work properly.
+%pseudo-selector-overlay {
+  &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+  }
+
+  &:focus-visible {
+      &::after {
+          outline: 2px solid #A55CE4;
+          border-radius: 3px;
+      }
+  }
+}
+
+// Animations
+@keyframes spin {
+  0% {
+      transform: rotate(0deg);
+  }
+
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+@keyframes shakeme {
+
+  2%,
+  18% {
+    transform: translateY(-3px);
+  }
+
+  4%,
+  16% {
+    transform: translateY(3px);
+  }
+
+  6%,
+  10%,
+  14% {
+    transform: translateY(-3px);
+  }
+
+  8%,
+  12% {
+    transform: translateY(3px);
+  }
+
+  20% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+
+  20% {
+    transform: translatey(-40px);
+    transform: rotate(5deg);
+  }
+
+  80% {
+    transform: translatey(40px);
+    transform: rotate(-5deg);
+  }
+
+  100% {
+    transform: translatey(0px);
+    transform: rotate(0deg);
+  }
+}
