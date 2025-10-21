@@ -1,0 +1,18 @@
+{
+  "socialLinks": [
+    {
+      "name": "Blog",
+      "url": "https://blog.andresllinasr.com"
+    },
+    {
+      "name": "LinkedIn",
+      "url": "https://linkedin.com/in/andresllinasr",
+      "logo": "logos/linkedin.svg"
+    },
+    {
+      "name": "GitHub",
+      "url": "https://github.com/andresllinasr",
+      "logo": "logos/github.svg"
+    }
+  ]
+}

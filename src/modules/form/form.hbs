@@ -1,0 +1,59 @@
+<div class="section-bg-wrapper section-warm">
+<section class="relative">
+  <div>
+    <h2 class="text-4xl tracking-tight font-extrabold text-center text-zinc-900 dark:text-white">
+      Contact Me
+    </h2>
+    <p class="mb-8 py-4 font-light text-center text-zinc-500 dark:text-zinc-400 sm:text-xl">
+      Have a project idea, a technical question, or just want to say hi? I’d love to hear from you!
+    </p>
+
+    <form id="contact" action="https://formspree.io/f/xnnglnzw" method="POST" class="space-y-8">
+      <div>
+        <label for="email" class="block mb-2 text-sm font-medium text-zinc-900 dark:text-zinc-300">
+          Your email
+        </label>
+        <input type="email" id="email" name="email"
+          class="shadow-sm bg-zinc-50 border border-zinc-300 text-zinc-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-zinc-700 dark:border-zinc-600 dark:placeholder-zinc-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+          placeholder="name@mail.com" required>
+      </div>
+
+      <div>
+        <label for="subject" class="block mb-2 text-sm font-medium text-zinc-900 dark:text-zinc-300">
+          Subject
+        </label>
+        <input type="text" id="subject" name="subject"
+          class="block p-3 w-full text-sm text-zinc-900 bg-zinc-50 rounded-lg border border-zinc-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-zinc-700 dark:border-zinc-600 dark:placeholder-zinc-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light"
+          placeholder="Let me know how I can help you" required>
+      </div>
+
+      <div class="sm:col-span-2">
+        <label for="message" class="block mb-2 text-sm font-medium text-zinc-900 dark:text-zinc-400">
+          Your message
+        </label>
+        <textarea id="message" name="message" rows="6"
+          class="block p-2.5 w-full text-sm text-zinc-900 bg-zinc-50 rounded-lg shadow-sm border border-zinc-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-zinc-700 dark:border-zinc-600 dark:placeholder-zinc-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+          placeholder="Leave a comment..." required></textarea>
+      </div>
+
+      <button type="submit" class="relative inline-flex items-center justify-center mr-2 mb-2 p-0.5 rounded-lg text-sm font-medium text-white
+         bg-gradient-to-br from-main-400 to-blue-600
+         hover:text-white
+         group">
+        <span
+          class="relative px-5 py-2.5 rounded-md bg-[rgba(24,24,27,0.9)] transition-all duration-75 ease-in group-hover:bg-[rgba(24,24,27,0.4)]">
+          Send message
+        </span>
+      </button>
+
+      <p id="contact-form-status" class="text-center text-sm text-zinc-500 dark:text-zinc-400"></p>
+    </form>
+    <video autoplay muted
+      class="hidden z-20 absolute h-20 aspect-square top-1/2 left-1/2 transform -translate-y-2/3 -translate-x-1/2"
+      src="/success.webm"></video>
+  </div>
+</section>
+</div>
+
+
+

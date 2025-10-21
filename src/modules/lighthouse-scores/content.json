@@ -1,0 +1,15 @@
+{
+  "title": "Real Performance, Real Results",
+  "subtitle": "Powered by Google Lighthouse",
+  "scores": {
+    "performance": 99,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100
+  },
+  "cta": {
+    "text": "View Full Lighthouse Report",
+    "url": "/lighthouse-report.html"
+  },
+  "note": "These metrics reflect the actual performance of the site you're browsing right now; refreshed at each new release."
+}

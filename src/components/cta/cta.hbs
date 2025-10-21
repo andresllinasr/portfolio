@@ -1,0 +1,21 @@
+{{#if (eq type "primary")}}
+<button
+  on
+  class="relative inline-flex items-center justify-center mr-2 mb-2 p-0.5 rounded-lg text-sm font-medium text-white
+         bg-gradient-to-br from-main-400 to-blue-600
+         hover:text-white
+         group">
+  <span
+    class="relative px-5 py-2.5 rounded-md bg-[rgba(24,24,27,0.9)] transition-all duration-75 ease-in group-hover:bg-[rgba(24,24,27,0.4)]">
+    {{label}}
+  </span>
+</button>
+{{else}}
+<button type="button"
+  class="inline-flex items-center justify-center mr-2 mb-2 px-5 py-2.5 rounded-lg border border-zinc-400 text-sm font-medium text-zinc-400 text-center
+         bg-[rgba(24,24,27,0.9)]
+         transition-all ease-in duration-75
+         hover:bg-zinc-900 hover:text-white">
+  {{label}}
+</button>
+{{/if}}

@@ -1,0 +1,26 @@
+<div class="section-bg-wrapper section-primary wide">
+  <section class="wide relative flex flex-col lg:flex-row items-center gap-8">
+    <h2 class="relative select-none static text-5xl text-center sm:text-6xl lg:text-[15vh] lg:[writing-mode:vertical-lr] font-bold opacity-40 top-0 leading-none whitespace-nowrap">
+        My stack
+    </h2>
+
+
+    <div class="lg:w-fit flex flex-col gap-16">
+
+      {{#each this}}
+      <div class="grid gap-8 items-start grid-cols-1 md:grid-cols-[200px_1fr]">
+        <h3 class="text-3xl sm:text-4xl font-bold">{{@key}}</h3>
+
+        <div class="grid gap-6 lg:gap-8 w-fit auto-rows-auto grid-cols-2 sm:grid-cols-2 lg:grid-cols-3">
+          {{#each this}}
+          <div class="slide-up w-fit flex gap-3.5 items-center">
+            <img loading="lazy" class="w-10 h-10 sm:w-12 sm:h-12" src="/logos/{{logoFile this}}.svg" alt="">
+            <span class="text-md sm:text-lg text-zinc-300 font-medium">{{this}}</span>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </section>
+</div>

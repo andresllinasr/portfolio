@@ -1,0 +1,27 @@
+{
+  "Frontend": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "Storybook",
+    "Sass",
+    "Tailwind",
+    "Webpack",
+    "Next.js",
+    "Styled-Components"
+  ],
+  "Backend": [
+    "Node.js",
+    "Python",
+    "MongoDB"
+  ],
+  "Tools": [
+    "Docker",
+    "AWS",
+    "jenkins",
+    "Git",
+    "Cypress"
+  ]
+}

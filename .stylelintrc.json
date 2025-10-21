@@ -1,0 +1,26 @@
+{
+  "extends": ["stylelint-config-standard"],
+  "plugins": ["stylelint-no-restricted-syntax"],
+  "rules": {
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": ["tailwind", "apply", "theme", "screen", "layer"]
+      }
+    ],
+    "import-notation": [
+      "string",
+      {
+        "except": ["url"]
+      }
+    ],
+    "plugin/no-restricted-syntax": [
+      [
+        {
+          "selector": "atrule[name='media'] rule",
+          "message": "Avoid nesting selectors inside media queries. Nest media queries within selectors instead."
+        }
+      ]
+    ]
+  }
+}

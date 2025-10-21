@@ -1,0 +1,31 @@
+<nav
+  aria-label="Main navigation"
+  class="fixed top-0 left-0 z-10 w-full border-b shadow-sm bg-zinc-950/50 backdrop-blur-md border-zinc-800/50"
+>
+  <div class="flex flex-wrap items-center justify-between p-4 mx-auto">
+    <a href="https://andresllinasr.com" class="flex items-center space-x-3 rtl:space-x-reverse">
+      <span class="self-center text-xl font-semibold text-white transition-colors duration-200 font-grotesk whitespace-nowrap hover:text-main-300">
+        AndrésLlinás<span class="font-bold text-main-500">_</span>
+      </span>
+    </a>
+    
+    <!-- Social Media Links -->
+    <div class="flex items-center gap-4 md:gap-6 justify-end">
+      {{#each socialLinks}}
+        <a 
+          href="{{url}}" 
+          class="text-zinc-300 hover:brightness-50 transition-all duration-200"
+          aria-label="{{name}}"
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          {{#if logo}}
+            <img src="{{logo}}" alt="{{name}}" class="w-6 md:w-8 h-6 md:h-8 brightness-0 invert opacity-70" />
+          {{else}}
+            <span class="font-bold text-md">{{name}}</span>
+          {{/if}}
+        </a>
+      {{/each}}
+    </div>
+  </div>
+</nav>

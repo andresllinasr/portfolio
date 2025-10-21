@@ -1,0 +1,26 @@
+{
+  "header": "Trusted by leading companies",
+  "subheader": "Companies I've worked with and contributed to their success",
+  "companies": [
+    {
+      "svg": "/logos/hubspot.svg",
+      "name": "HubSpot",
+      "url": "https://www.hubspot.com"
+    },
+    {
+      "svg": "/logos/ci-and-t.svg", 
+      "name": "CI&T",
+      "url": "https://www.ciandt.com"
+    },
+    {
+      "svg": "/logos/coca-cola.svg",
+      "name": "Coca-Cola",
+      "url": "https://www.coca-cola.com"
+    },
+    {
+      "svg": "/logos/stratesys.svg",
+      "name": "Stratesys",
+      "url": "https://www.stratasys.com"
+    }
+  ]
+}

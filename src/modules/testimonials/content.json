@@ -1,0 +1,15 @@
+{
+  "highlighted": "Nice things",
+  "header": "people say about my work",
+  "testimonials": [
+    {
+      "title": "A valuable asset to any team",
+      "quote": "Andrés' proactive nature, positive attitude, and reliable support made them a pleasure to work with. Their clear and effective communication, despite English not being their native language, fostered a collaborative and supportive work environment.",
+      "author": {
+        "name": "Richard Vilas",
+        "title": "Solutions Architect at CI&T",
+        "image": "/author-1.jpeg"
+      }
+    }
+  ]
+}

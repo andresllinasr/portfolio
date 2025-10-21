@@ -1,0 +1,12 @@
+<div class="section-divider {{height}} overflow-hidden"
+    style="background-color: {{toColor}}; width: 100vw; margin-left: calc(-50vw + 50%);">
+    <svg viewBox="0 0 1200 120" class="block w-full h-full" preserveAspectRatio="none">
+        {{#if svgPaths}}
+        {{#each svgPaths}}
+        <path d="{{this.path}}" fill="{{../fromColor}}" opacity="{{this.opacity}}"></path>
+        {{/each}}
+        {{else}}
+        <path d="{{svgPath}}" fill="{{fromColor}}"></path>
+        {{/if}}
+    </svg>
+</div>

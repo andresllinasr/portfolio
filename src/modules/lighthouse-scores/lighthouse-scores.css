@@ -1,0 +1,8 @@
+.lighthouse-gauge {
+  transform: rotate(-90deg);
+  stroke-linecap: round;
+
+  --lighthouse-green: #0cce6b;
+  --lighthouse-orange: #ffa400;
+  --lighthouse-red: #ff5722;
+}

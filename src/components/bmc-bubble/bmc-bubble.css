@@ -1,0 +1,7 @@
+#bmc-bubble-container {
+  display: none;
+  
+  @media (width >= 1024px) {
+    display: block;
+  }
+}

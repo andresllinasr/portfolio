@@ -1,0 +1,44 @@
+<div class="section-bg-wrapper section-primary">
+  <section class="flex flex-col gap-8 text-center">
+    <div class="flex flex-col gap-3">
+      <h2 class="text-3xl font-bold">{{title}}</h2>
+      <p class="text-sm text-zinc-400">{{subtitle}}</p>
+    </div>
+    
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 justify-items-center">
+      {{#each scores}}
+      <div class="flex flex-col items-center gap-3 group cursor-pointer hover:scale-105 transition-transform duration-200">
+        <div class="relative w-24 h-24 md:w-32 md:h-32">
+          <svg class="w-full h-full lighthouse-gauge" viewBox="0 0 120 120">
+            <circle class="lighthouse-gauge-base opacity-10" 
+                    cx="60" cy="60" r="56" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    stroke-width="8"/>
+            <circle class="lighthouse-gauge-arc" 
+                    cx="60" cy="60" r="56" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    stroke-width="8"
+                    data-score="{{this}}"
+                    pathLength="100"/>
+          </svg>
+          <div class="lighthouse-gauge-percentage absolute inset-0 flex items-center justify-center text-2xl md:text-3xl font-bold text-zinc-200 font-grotesk" data-final-score="{{this}}">0</div>
+        </div>
+        <div class="text-sm text-zinc-400 font-medium text-center capitalize max-w-[100px] group-hover:text-zinc-200 transition-colors">{{@key}}</div>
+      </div>
+      {{/each}}
+    </div>
+    
+    <div class="flex flex-col items-center gap-3 mt-8">
+      <a href="{{cta.url}}" target="_blank" rel="noopener noreferrer" 
+         class="inline-flex items-center gap-1.5 text-sm text-zinc-400 hover:text-zinc-200 transition-colors duration-200 underline decoration-zinc-600 hover:decoration-zinc-400 underline-offset-4">
+        {{cta.text}}
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+        </svg>
+      </a>
+      <p class="text-xs text-zinc-400 max-w-md">{{note}}</p>
+    </div>
+  </section>
+</div>

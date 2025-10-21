@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+@theme {
+  --font-inter: 'Inter', sans-serif;
+  --font-grotesk: 'Space Grotesk', sans-serif;
+  --color-main-50: #f7f2ff;
+  --color-main-100: #efe8ff;
+  --color-main-200: #e1d4ff;
+  --color-main-300: #cbb2ff;
+  --color-main-400: #b386ff;
+  --color-main-500: #9c56fc;
+  --color-main-600: #9033f4;
+  --color-main-700: #8121e0;
+  --color-main-800: #6d1bbc;
+  --color-main-900: #5a189a;
+  --color-main-950: #380c69;
+
+  /* Breakpoints */
+  --breakpoint-desktop: 1024px;
+  --breakpoint-wide: 1280px;
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: sans-serif;
+  }
+
+  body {
+    @apply text-zinc-200 bg-zinc-950;
+
+    font-family: var(--font-inter);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-grotesk);
+  }
+
+  ::selection {
+    background-color: var(--color-main-800);
+    color: white;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-3 ring-main-400 rounded-md;
+  }
+
+}
+
+#app {
+  padding: 0;
+  scroll-behavior: smooth;
+
+  @apply bg-zinc-900;
+}
+
+section {
+  padding: 3rem 1rem;
+  max-width: var(--breakpoint-desktop);
+  margin-inline: auto;
+  
+  @media (width >= 1024px) {
+    padding: 5rem 2rem;
+  }
+}
+
+section.full-width {
+  padding: 0;
+  max-width: none;
+  margin-inline: 0;
+}
+
+section.wide {
+  max-width: var(--breakpoint-wide);
+}
+
+.section-primary {
+  @apply bg-zinc-900;
+}
+
+.section-secondary {
+  @apply bg-zinc-950;
+}
+
+.section-warm {
+  @apply bg-zinc-800;
+}
+
+.section-bg-wrapper {
+  width: 100%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  position: relative;
+}
+
+.section-bg-wrapper > section {
+  max-width: var(--breakpoint-desktop);
+  margin-inline: auto;
+}
+
+.section-bg-wrapper.wide > section {
+  max-width: var(--breakpoint-wide);
+}
+
+/* Sections adjacent to divider components get extra padding */
+.section-bg-wrapper:has(+ div[class*="section-divider"]) section,
+div[class*="section-divider"] + .section-bg-wrapper section {
+  padding-block: 2.5rem;
+  
+  @media (width >= 1024px) {
+    padding-block: 4rem;
+  }
+}
+
+
+

@@ -1,0 +1,14 @@
+{
+  "header": "About Me",
+  "intro": "I’m a Senior Front-End Developer focused on building web experiences that are intuitive, reliable, and scalable. I enjoy turning complex requirements into interfaces that are simple to use and thoughtful in their design.",
+  "specialties": [
+    "CMS-driven websites that are easy to maintain and grow",
+    "Design systems and reusable components that bring consistency to projects",
+    "Connecting APIs and automating tasks to make websites work seamlessly"
+  ],
+  "approach": {
+    "title": "How I work:",
+    "steps": "Explore, Plan, Build, Deliver",
+    "class": "animation-tbd"
+  }
+}

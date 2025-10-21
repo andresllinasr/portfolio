@@ -1,0 +1,72 @@
+{
+  "header": "My Expertise",
+  "subheader": "Areas where I deliver exceptional results and drive meaningful impact",
+  "cards": [
+    {
+      "title": "Frontend Development",
+      "icon": "⚛️",
+      "colorScheme": "blue",
+      "skills": [
+        "React & TypeScript applications",
+        "Component libraries & design systems",
+        "CSS Preprocessors & Tailwind styling",
+        "Responsive web design"
+      ]
+    },
+    {
+      "title": "CMS & Content Management",
+      "icon": "🏗️",
+      "colorScheme": "green",
+      "skills": [
+        "CMS development",
+        "Design system implementation",
+        "Template architecture",
+        "SEO optimization"
+      ]
+    },
+    {
+      "title": "DevOps & Automation",
+      "icon": "⚙️",
+      "colorScheme": "purple",
+      "skills": [
+        "CI/CD pipeline setup",
+        "Docker containerization",
+        "AWS cloud deployment",
+        "Build process optimization"
+      ]
+    },
+    {
+      "title": "API Integration",
+      "icon": "🔗",
+      "colorScheme": "orange",
+      "skills": [
+        "RESTful API development",
+        "Third-party integrations",
+        "Authentication systems",
+        "Real-time data handling"
+      ]
+    },
+    {
+      "title": "Performance & Optimization",
+      "icon": "⚡",
+      "colorScheme": "yellow",
+      "skills": [
+        "Core Web Vitals optimization",
+        "Lighthouse score improvements",
+        "Bundle size reduction",
+        "Image optimization & lazy loading"
+      ]
+    },
+    {
+      "title": "Testing & Quality Assurance",
+      "icon": "🧪",
+      "colorScheme": "teal",
+      "skills": [
+        "Unit & integration testing",
+        "E2E test automation",
+        "Accessibility testing",
+        "Code quality standards"
+      ]
+    }
+  ]
+}

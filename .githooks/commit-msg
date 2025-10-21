@@ -1,0 +1,49 @@
+#!/bin/bash
+
+# Simple commit message validation hook
+# Make this file executable: chmod +x .githooks/commit-msg
+
+set -e
+
+COMMIT_MSG_FILE=$1
+COMMIT_MSG=$(cat "$COMMIT_MSG_FILE")
+
+echo "🔍 Validating commit message..."
+
+# 1. Check minimum length
+if [[ ${#COMMIT_MSG} -lt 10 ]]; then
+  echo "❌ Commit message too short (minimum 10 characters)"
+  echo "   Current: '$COMMIT_MSG'"
+  exit 1
+fi
+
+# 2. Check for conventional commit format (optional but recommended)
+CONVENTIONAL_PATTERN="^(feat|fix|docs|style|refactor|test|chore)(\(.+\))?: .+"
+
+if [[ ! "$COMMIT_MSG" =~ $CONVENTIONAL_PATTERN ]]; then
+  echo "⚠️  Warning: Commit message doesn't follow conventional format"
+  echo "   Current: '$COMMIT_MSG'"
+  echo "   Recommended format: type(scope): description"
+  echo "   Examples:"
+  echo "     feat: add user authentication"
+  echo "     fix(hero): resolve animation timing issue"
+  echo "     docs: update README with setup instructions"
+  echo ""
+  echo "   Proceeding anyway... (this is just a warning)"
+fi
+
+# 3. Check for common issues
+if [[ "$COMMIT_MSG" =~ ^(WIP|wip|TODO|todo|FIXME|fixme) ]]; then
+  echo "❌ Commit message indicates work in progress"
+  echo "   Please complete your work before committing"
+  echo "   Current: '$COMMIT_MSG'"
+  exit 1
+fi
+
+# 4. Check for merge commit messages (usually auto-generated)
+if [[ "$COMMIT_MSG" =~ ^Merge ]]; then
+  echo "ℹ️  Merge commit detected - skipping validation"
+  exit 0
+fi
+
+echo "✅ Commit message validation passed!"

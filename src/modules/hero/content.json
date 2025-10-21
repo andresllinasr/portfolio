@@ -1,0 +1,26 @@
+{
+  "background_video": {
+    "src": "/videos/hero.mp4",
+    "poster": "/videos/hero-poster.webp"
+  },
+  "header": "Andrés Llinás",
+  "subheader": "Code that feels designed. Design that performs.",
+  "buttons": [
+    {
+      "text": "Get in touch",
+      "type": "primary",
+      "action": "scroll",
+      "target": "#contact"
+    },
+    {
+      "text": "Download CV",
+      "type": "secondary",
+      "action": "download",
+      "href": "https://docs.google.com/document/d/186GIckhs1BwJoFqwPKfxI6XqIU0kM4GKLoTfwVVBgV4/export?format=pdf",
+      "download": "MyCV.pdf"
+    }
+  ],
+  "scroll_hint_video": {
+    "src": "/scroll-hint.webm"
+  }
+}

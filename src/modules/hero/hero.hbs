@@ -1,0 +1,49 @@
+<section class="full-width relative w-full overflow-hidden min-h-dvh h-dvh bg-zinc-950">
+
+  <video aria-hidden="true" role="presentation" autoplay muted loop playsinline
+    class="absolute top-0 left-0 z-0 object-cover w-full h-full opacity-30 blur-xl" poster="{{background_video.poster}}"
+    preload="metadata">
+    <source src="{{background_video.src}}" type="video/mp4" />
+  </video>
+
+  <div class="relative z-0 flex flex-col items-center justify-center h-full gap-8 text-center px-4">
+
+    <h1 class="opacity-0 text-[clamp(3rem,10vw,9rem)] font-bold text-zinc-100 leading-[0.9] m-0 p-0 gsap-split">
+      <span> {{header}} </span>
+    </h1>
+
+    <p class="text-lg text-zinc-300 gsap-mask opacity-0">
+      <span> {{subheader}}</span>
+    </p>
+
+    <div class="flex flex-wrap justify-center gap-4 hero-cta-container opacity-0">
+      {{#each buttons}}
+      <button type="button" class="
+            relative cursor-pointer inline-flex items-center justify-center mr-2 mb-2 p-0.5 rounded-lg text-sm font-medium
+            {{#ifEquals type 'primary'}}
+              text-zinc-100 bg-gradient-to-br from-main-400 to-blue-600 hover:text-zinc-100 group
+            {{else}}
+              text-zinc-400 border border-zinc-400 bg-[rgba(24,24,27,0.9)] hover:bg-zinc-900 hover:text-zinc-100
+            {{/ifEquals}}
+          " {{#ifEquals action 'download' }} data-download="cv" data-href="{{href}}" data-filename="{{download}}"
+        {{/ifEquals}} {{#ifEquals action 'scroll' }} data-scroll-to="{{target}}" {{/ifEquals}}>
+        <span class="
+            relative px-5 py-2.5 rounded-md transition-all duration-75 ease-in
+            {{#ifEquals type 'primary'}}
+              bg-[rgba(24,24,27,0.9)] group-hover:bg-[rgba(24,24,27,0.4)]
+            {{/ifEquals}}
+          ">
+          {{text}}
+        </span>
+      </button>
+      {{/each}}
+    </div>
+  </div>
+
+  <div class="absolute transform -translate-x-1/2 bottom-6 left-1/2">
+    <video aria-hidden="true" role="presentation" muted loop playsinline class="w-16 h-16 scroll-hint">
+      <source src="{{scroll_hint_video.src}}" type="video/webm" />
+    </video>
+  </div>
+
+</section>
