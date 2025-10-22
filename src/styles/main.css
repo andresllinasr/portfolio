@@ -21,6 +21,7 @@
 }
 
 @layer base {
+
   *,
   *::before,
   *::after {
@@ -67,9 +68,14 @@
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
+
   .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
+  }
+
+  .scroll-snap-stop {
+    scroll-snap-stop: always;
   }
 }
 
@@ -84,7 +90,7 @@ section {
   padding: 3rem 1rem;
   max-width: var(--breakpoint-desktop);
   margin-inline: auto;
-  
+
   @media (width >= 1024px) {
     padding: 5rem 2rem;
   }
@@ -132,11 +138,8 @@ section.wide {
 .section-bg-wrapper:has(+ div[class*="section-divider"]) section,
 div[class*="section-divider"] + .section-bg-wrapper section {
   padding-block: 2.5rem;
-  
-  @media (width >= 1024px) {
+
+  @media (width >=1024px) {
     padding-block: 4rem;
   }
 }
-
-
-

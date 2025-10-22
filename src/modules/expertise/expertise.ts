@@ -5,44 +5,40 @@ import content from './content.json';
 export async function renderExpertise(container: HTMLElement, id: string) {
   const expertiseModule = new Module('expertise', id, container, template, content, {});
   await expertiseModule.render();
-  setupExpertiseInteractions(container);
+
+  initializeExpandableCards(container);
+
   return expertiseModule;
 }
 
-function setupExpertiseInteractions(container: HTMLElement) {
+function initializeExpandableCards(container: HTMLElement) {
   const cards = container.querySelectorAll('button[aria-expanded]');
-  
-  cards.forEach((card) => {
-    let isExpanded = false;
-    
-    const toggleCard = () => {
-      isExpanded = !isExpanded;
-      card.setAttribute('aria-expanded', isExpanded.toString());
-      
-      const coverLayer = card.querySelector('.cover-layer') as HTMLElement;
-      const skillsContainer = card.querySelector('.skills-container') as HTMLElement;
-      
-      if (isExpanded) {
-        if (coverLayer) coverLayer.style.transform = 'translateY(-100%)';
-        skillsContainer?.setAttribute('aria-hidden', 'false');
-      } else {
-        if (coverLayer) coverLayer.style.transform = 'translateY(0)';
-        skillsContainer?.setAttribute('aria-hidden', 'true');
-      }
-    };
-    
-    card.addEventListener('click', () => {
-      toggleCard();
-    });
-    
-    card.addEventListener('keydown', (e) => {
-      const ke = e as KeyboardEvent;
-      if (ke.key === 'Enter' || ke.key === ' ') {
-        ke.preventDefault();
-        toggleCard();
-      } else if (ke.key === 'Escape' && isExpanded) {
-        toggleCard();
-      }
-    });
+  cards.forEach(initializeExpandableCard);
+}
+
+function initializeExpandableCard(card: Element) {
+  const button = card as HTMLButtonElement;
+  let isExpanded = false;
+
+  const toggleCardExpansion = () => {
+    isExpanded = !isExpanded;
+    button.setAttribute('aria-expanded', String(isExpanded));
+
+    const cover = button.querySelector<HTMLElement>('.cover-layer');
+    const skills = button.querySelector<HTMLElement>('.skills-container');
+
+    if (cover) cover.style.transform = isExpanded ? 'translateY(-100%)' : 'translateY(0)';
+    if (skills) skills.setAttribute('aria-hidden', String(!isExpanded));
+  };
+
+  button.addEventListener('click', toggleCardExpansion);
+
+  button.addEventListener('keydown', (e: KeyboardEvent) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      toggleCardExpansion();
+    } else if (e.key === 'Escape' && isExpanded) {
+      toggleCardExpansion();
+    }
   });
 }
