@@ -1734,6 +1734,9 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+  .scroll-snap-stop {
+    scroll-snap-stop: always;
+  }
 }
 #app {
   padding: 0;
@@ -1781,7 +1784,7 @@ section.wide {
 .section-bg-wrapper:has(+ div[class*="section-divider"]) section,
 div[class*="section-divider"] + .section-bg-wrapper section {
   padding-block: 2.5rem;
-  @media (width >= 1024px) {
+  @media (width >=1024px) {
     padding-block: 4rem;
   }
 }
@@ -2154,9 +2157,6 @@ div[class*="section-divider"] + .section-bg-wrapper section {
     }
   }
 }
-
-
-
 
 .lighthouse-gauge {
   transform: rotate(-90deg);
