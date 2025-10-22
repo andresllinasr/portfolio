@@ -132,6 +132,12 @@ function setupDownloadButton(element: HTMLElement) {
   });
 }
 
+function fixHeroHeightOnLoad(section: HTMLElement) {
+  const initialHeight = window.innerHeight;
+  section.style.height = `${initialHeight}px`;
+}
+
+
 export async function renderHero(app: HTMLElement, id: string): Promise<Module | void> {
   if (!app) {
     logger.warn('App container not provided');
@@ -142,6 +148,7 @@ export async function renderHero(app: HTMLElement, id: string): Promise<Module |
 
   const heroModule = new Module('hero', id, app, template, content, {
     onInit: (el) => {
+      fixHeroHeightOnLoad(el);
       setupDownloadButton(el);
     },
     onRender: (el, tl) => {
