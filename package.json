@@ -7,6 +7,7 @@
     "dev": "webpack serve --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "start": "npm run build && serve -s dist -l 3000",
+    "deploy": "gh-pages -d dist",
     "audit": "concurrently \"npm run build\" \"serve -s dist -l 3000\" \"npx wait-on http://localhost:3000 && npx lighthouse http://localhost:3000 --output html --output-path ./public/lighthouse-report.html\""
   },
   "author": "Andrés Llinás",
@@ -22,6 +23,7 @@
     "eslint": "^9.37.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
+    "gh-pages": "^6.3.0",
     "globals": "^16.4.0",
     "html-webpack-plugin": "^5.6.4",
     "mini-css-extract-plugin": "^2.9.4",
