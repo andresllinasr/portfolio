@@ -7,17 +7,17 @@
     
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
       {{#each cards}}
-      <button class="group bg-zinc-800/50 backdrop-blur-sm rounded-lg border-2 border-zinc-700/30 
-                     hover:border-zinc-500/60 hover:shadow-xl hover:shadow-black/30
-                     focus:border-zinc-400/80 focus:outline-none focus:ring-2 focus:ring-zinc-400/50 focus:ring-offset-2 focus:ring-offset-zinc-900
-                     transition-all duration-400 ease-out h-64 overflow-hidden relative w-full text-left"
+  <button class="group bg-zinc-800/50 backdrop-blur-sm rounded-lg border-2 border-zinc-700/30 
+         hover:border-zinc-500/60 hover:shadow-xl hover:shadow-black/30
+         focus:border-zinc-400/80 focus:outline-none focus:ring-2 focus:ring-zinc-400/50 focus:ring-offset-2 focus:ring-offset-zinc-900
+         transition-all duration-400 ease-out h-auto md:h-64 overflow-hidden relative w-full text-left"
                      aria-expanded="false"
                      aria-label="{{title}}, {{skills.length}} skills"
                      type="button">
         
         <!-- Skills List (Behind) -->
-        <ul class="absolute inset-0 bg-zinc-800 backdrop-blur-sm rounded-lg p-6
-                   flex flex-col justify-center gap-4 skills-container list-none" 
+  <ul class="absolute inset-0 bg-zinc-800 backdrop-blur-sm rounded-lg p-6
+       flex flex-col justify-center gap-4 skills-container list-none z-0" 
             aria-hidden="true" aria-label="{{title}} skills">
           
           {{#each skills}}
@@ -31,11 +31,11 @@
         </ul>
         
         <!-- Opaque Cover Layer (Icon + Title)  -->
-  <div class="cover-layer absolute inset-0 w-full h-full bg-zinc-900/90 backdrop-blur-sm rounded-lg
-        shadow-md shadow-zinc-950/20 transform translate-z-0
-        flex flex-col items-center justify-between p-6 z-10
-        group-hover:-translate-y-full
-        transition-transform duration-500 ease-out">
+  <div class="cover-layer relative md:absolute md:inset-0 md:w-full md:h-full bg-zinc-900/90 backdrop-blur-sm rounded-lg
+    shadow-md shadow-zinc-950/20 transform translate-z-0
+    flex flex-col items-center justify-between p-6 z-10
+    group-hover:-translate-y-full
+    transition-transform duration-500 ease-out">
           <div class="flex flex-col items-center gap-4 flex-1 justify-center">
             <div class="flex items-center justify-center w-16 h-16 rounded-lg {{getBgClass colorScheme}}">
               <span class="text-2xl" role="img" aria-label="{{title}} icon">{{icon}}</span>
