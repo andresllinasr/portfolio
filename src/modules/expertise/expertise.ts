@@ -19,20 +19,19 @@ function setupExpertiseInteractions(container: HTMLElement) {
       isExpanded = !isExpanded;
       card.setAttribute('aria-expanded', isExpanded.toString());
       
-      const coverLayer = card.querySelector('.absolute.inset-0.z-10') as HTMLElement;
+      const coverLayer = card.querySelector('.cover-layer') as HTMLElement;
       const skillsContainer = card.querySelector('.skills-container') as HTMLElement;
       
       if (isExpanded) {
-        coverLayer?.style.setProperty('transform', 'translateY(-100%)');
+        if (coverLayer) coverLayer.style.transform = 'translateY(-100%)';
         skillsContainer?.setAttribute('aria-hidden', 'false');
       } else {
-        coverLayer?.style.setProperty('transform', 'translateY(0)');
+        if (coverLayer) coverLayer.style.transform = 'translateY(0)';
         skillsContainer?.setAttribute('aria-hidden', 'true');
       }
     };
     
-    card.addEventListener('click', (e) => {
-      e.preventDefault();
+    card.addEventListener('click', () => {
       toggleCard();
     });
     
