@@ -1,16 +1,55 @@
 <div class="section-bg-wrapper section-primary">
-  <section class="flex flex-col gap-8 md:gap-16">
+  <section class="flex flex-col gap-8 sm:gap-16">
     <div class="flex flex-col gap-4 text-center">
       <h2 class="text-3xl font-bold">{{header}}</h2>
       <p class="text-lg text-zinc-200">{{subheader}}</p>
     </div>
     
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+    <!-- Mobile carousel -->
+    <div class="sm:hidden">
+      <style>
+        .mobile-carousel { -ms-overflow-style: none; scrollbar-width: none; }
+        .mobile-carousel::-webkit-scrollbar { display: none; height: 0; }
+      </style>
+      <div class="mobile-carousel overflow-x-auto snap-x snap-mandatory">
+        <div class="flex flex-nowrap gap-6">
+          {{#each cards}}
+          <div class="snap-center flex-shrink-0 w-[80vw]">
+            <div class="group bg-zinc-800/50 backdrop-blur-sm rounded-lg border-2 border-zinc-700/30 
+              hover:border-zinc-500/60 hover:shadow-xl hover:shadow-black/30
+              focus:border-zinc-400/80 focus:outline-none focus:ring-2 focus:ring-zinc-400/50 focus:ring-offset-2 focus:ring-offset-zinc-900
+              transition-all duration-300 ease-out h-auto overflow-hidden relative w-full text-left p-6">
+              <div class="flex flex-col items-center gap-4">
+                <div class="flex items-center justify-center w-16 h-16 rounded-lg {{getBgClass colorScheme}}">
+                  <span class="text-2xl" role="img" aria-label="{{title}} icon">{{icon}}</span>
+                </div>
+                <h3 class="text-xl font-semibold text-center">{{title}}</h3>
+              </div>
+              <div class="w-full h-0.5 {{getBgClass colorScheme}} my-4"></div>
+              <ul class="grid grid-cols-1 gap-3 list-none">
+                {{#each skills}}
+                <li class="flex items-start gap-3">
+                  <svg class="w-5 h-5 mt-0.5 flex-shrink-0 {{getTextClass ../colorScheme}}" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                    <path fill-rule="evenodd" d="M12 2c-.791 0-1.55.314-2.11.874l-.893.893a.985.985 0 0 1-.696.288H7.04A2.984 2.984 0 0 0 4.055 7.04v1.262a.986.986 0 0 1-.288.696l-.893.893a2.984 2.984 0 0 0 0 4.22l.893.893a.985.985 0 0 1 .288.696v1.262a2.984 2.984 0 0 0 2.984 2.984h1.262c.261 0 .512.104.696.288l.893.893a2.984 2.984 0 0 0 4.22 0l.893-.893a.985.985 0 0 1 .696-.288h1.262a2.984 2.984 0 0 0 2.984-2.984V15.7c0-.261.104-.512.288-.696l.893-.893a2.984 2.984 0 0 0 0-4.22l-.893-.893a.985.985 0 0 1-.288-.696V7.04a2.984 2.984 0 0 0-2.984-2.984h-1.262a.985.985 0 0 1-.696-.288l-.893-.893A2.984 2.984 0 0 0 12 2Zm3.683 7.73a1 1 0 1 0-1.414-1.413l-4.253 4.253-1.277-1.277a1 1 0 0 0-1.415 1.414l1.985 1.984a1 1 0 0 0 1.414 0l4.96-4.96Z" clip-rule="evenodd"/>
+                  </svg>
+                  <span class="text-sm text-zinc-200">{{this}}</span>
+                </li>
+                {{/each}}
+              </ul>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+
+    <!-- Desktop grid (sm+) -->
+    <div class="hidden sm:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
       {{#each cards}}
-  <button class="group bg-zinc-800/50 backdrop-blur-sm rounded-lg border-2 border-zinc-700/30 
+      <button class="group bg-zinc-800/50 backdrop-blur-sm rounded-lg border-2 border-zinc-700/30 
          hover:border-zinc-500/60 hover:shadow-xl hover:shadow-black/30
          focus:border-zinc-400/80 focus:outline-none focus:ring-2 focus:ring-zinc-400/50 focus:ring-offset-2 focus:ring-offset-zinc-900
-         transition-all duration-400 ease-out h-auto md:h-64 overflow-hidden relative w-full text-left"
+      transition-all duration-300 ease-out h-auto sm:h-64 overflow-hidden relative w-full text-left"
                      aria-expanded="false"
                      aria-label="{{title}}, {{skills.length}} skills"
                      type="button">
@@ -31,8 +70,8 @@
         </ul>
         
         <!-- Opaque Cover Layer (Icon + Title)  -->
-  <div class="cover-layer relative md:absolute md:inset-0 md:w-full md:h-full bg-zinc-900/90 backdrop-blur-sm rounded-lg
-    shadow-md shadow-zinc-950/20 transform translate-z-0
+  <div class="cover-layer relative sm:absolute sm:inset-0 sm:w-full sm:h-full bg-zinc-900/90 backdrop-blur-sm rounded-lg
+    shadow-md shadow-zinc-950/20
     flex flex-col items-center justify-between p-6 z-10
     group-hover:-translate-y-full
     transition-transform duration-500 ease-out">
